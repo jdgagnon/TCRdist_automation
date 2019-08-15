@@ -1,0 +1,13 @@
+Location of TCRdist relevant files:
+R:\_Human Tumor Immunology\TCR-Analysis
+First we need to collect all of the relevant sets of T cell receptors and organize them in a format that can be used to perform TCRdist
+Open extract_TRA_TRB.sh and modify line 3 to specify the directory/subdirectories that contain the patients TCR repertoires.
+Open extract_TRA_TRB.main.py and edit the directory you would like to store the final analyses in (note that the program will create the subdirectories based on the directories specified by extract_TRA_TRB.sh
+Run extract_TRA_TRB.sh
+
+Check within the directory you specified in extract_TRA_TRB.main.py for the subdirectories that should have been created and ensure that there are .txt files which should have been created with the format:
+id	epitope	subject	a_nucseq	b_nucseq
+
+followed by the respective identifying information and sequences for the TCRs.
+
+If all that looks good, open perform_TCRdist.sh and modify line 2 to indicate the appropriate parent directory that contains the subdirectories that were just created and then run perform_TCRdist.sh
